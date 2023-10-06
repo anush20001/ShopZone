@@ -16,8 +16,7 @@ const Registration = () => {
   const [password, setPassword] = useState("");
   const [cPassword, setCPassword] = useState("");
   const [firebaseErr, setFirebaseErr] = useState()
-  const [role, setRole] = useState()
-  const [roleErr, setRoleErr] = useState()
+ 
 
   // Error Message start
   const [errClientName, setErrClientName] = useState("");
@@ -54,12 +53,7 @@ const Registration = () => {
       .toLowerCase()
       .match(/^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/);
   };
-//role
-// const handleRole = (e) => {
-//   setRole(e.target.value);
-//   setRoleErr("")
-// };
-  // Submit button start
+
   const handleRegistration = (e) => {
     e.preventDefault();
     if (!clientName) {
@@ -87,10 +81,7 @@ const Registration = () => {
         setErrCPassword("Password not matched");
       }
     }
-    if (!role) {
-      setRole("Enter you are a User or Admin!");
-      setRoleErr("you are a User or Admin! ")
-    } 
+    
 
 
     if (
@@ -100,8 +91,8 @@ const Registration = () => {
       password &&
       password.length >= 6 &&
       cPassword &&
-      cPassword === password &&
-      role
+      cPassword === password 
+      
     ) {
        
         setLoading(true);
@@ -111,8 +102,8 @@ const Registration = () => {
     updateProfile(auth.currentUser,{
         displayName:clientName,
         photoURL:
-        "https://media.licdn.com/dms/image/D5603AQHePO1LiBhnQw/profile-displayphoto-shrink_400_400/0/1677341520889?e=1701302400&v=beta&t=Rs0OaEriDrYqvefUl8N3sNP9aj2o6mjaZEqlueoRKPY"
-    })
+        " https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTexOiMwDYveeROBeP_jZlXWUfpo96dvwW9QZ3v4b2hY6mkLGukTM_YGpMBdrMjeoQ9fvE&usqp=CAU"
+      })
     // Signed in 
     const user = userCredential.user;
    
@@ -121,7 +112,7 @@ const Registration = () => {
     setSuccessMsg("Account Created Successfully")
     setTimeout(() => {
         navigate("/signin")
-    },3000)
+    },2000)
     // ...
   })
   .catch((error) => {
@@ -141,7 +132,7 @@ const Registration = () => {
       setCPassword("");
       setErrCPassword("");
       setFirebaseErr("")
-      setRole("")
+  
     }
   };
   return (
@@ -241,24 +232,7 @@ const Registration = () => {
                   Passwords must be at least 6 characters.
                 </p>
               </div>
-              {/* role */}
-              <div className="flex flex-col gap-2">
-                <p className="text-sm font-medium">Role </p>
-                <input
-                placeholder="User or Admin"
-                  type="text" 
-               
-                 // onChange={handleRole}
-                  className="w-full  border border-zinc-400 px-2 text-base rounded-sm outline-none focus-within:border-[#e77600] focus-within:shadow-amazonInput duration-100"
-                /></div>
-                 {role && (
-                  <p  value={role} className="text-red-600 text-xs font-semibold tracking-wide flex items-center gap-2 mt-0">
-                    <span className="italic font-titleFont font-extrabold text-base">
-                      !
-                    </span>
-                    {role}
-                  </p>
-                )}
+            
               <button
                 onClick={handleRegistration}
                 className="w-full py-1.5 text-sm font-normal rounded-sm bg-gradient-to-t from-[#d32f2f] to-[#d32f2f] hover:bg-gradient-to-b border border-zinc-400 active:border-yellow-800 active:shadow-amazonInput"
