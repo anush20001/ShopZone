@@ -35,6 +35,8 @@ const HeaderBottom = () => {
    
      
     <li onClick={()=> setSideBar(true)} className=' headerHover gap-1 font-bold '>
+
+      <MenuIcon/>
         All
         </li>
     <li className=' headerHover  hidden md:inline-flex'>Today's Deals</li>
