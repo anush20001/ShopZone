@@ -60,7 +60,7 @@ const Header = () => {
         <div className="hidden lgl:inline-flex h-10 rounded-md flex-grow relative ml-10 mr-5">
           <span
             onClick={() => setShowAll(!showAll)}
-            className="w-14 h-full bg-gray-200  hover:bg-blue-500 border-2 cursor-pointer duration-300 text-sm text-amazon_blue font-titleFont flex items-center justify-center rounded-tl-md rounded-bl-md"
+            className="w-14 h-full bg-gray-200   border-2 cursor-pointer duration-300 text-sm text-amazon_blue font-titleFont flex items-center justify-center rounded-tl-md rounded-bl-md"
           >
             All{" "}
             <span>
