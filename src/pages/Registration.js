@@ -271,7 +271,7 @@ const Registration = () => {
                     }
             </div>
             <p className="text-xs text-black leading-4 mt-4">
-              By Continuing, you agree to Amazon's{" "}
+              By Continuing, you agree to Shopzone's{" "}
               <span className="text-blue-600">Conditions of Use </span>and{" "}
               <span className="text-blue-600">Privace Notice.</span>
             </p>
