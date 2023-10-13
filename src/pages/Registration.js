@@ -118,11 +118,11 @@ const Registration = () => {
   .catch((error) => {
     const errorCode = error.code;
    // const errorMessage = error.message;
-    
+   setLoading(false)
     if(errorCode.includes("auth/email-already-in-use")){
         setFirebaseErr("Email Already in use, Try another one")
     }
-
+    setLoading(false)
     // ..
   });
       // =========== Firebase Registration End here ===============
