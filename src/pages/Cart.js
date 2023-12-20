@@ -19,6 +19,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 
+
 const Cart = () => {
   
   const navigate = useNavigate()
@@ -167,7 +168,7 @@ const Cart = () => {
               </p>
               <div>
                 <p className="font-semibold px-6 py-1 flex items-center justify-between">
-                  Total: <span className="text-lg font-bold">${totalAmt}</span>
+                  Total: <span className="text-lg font-bold">  ₹{totalAmt}</span>
                 </p>
               </div>
              <Link onClick={() => navigateToOrders()} >

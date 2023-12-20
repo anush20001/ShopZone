@@ -6,7 +6,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 import {MutatingDots} from "react-loader-spinner"
 import wellcome2grp from "../assests/wellcome2grp.jpg"
-import { dividerClasses } from "@mui/material";
+
 import { useDispatch } from "react-redux";
 import { setUserInfo } from "../redux/amazonSlice"; 
 
@@ -52,7 +52,7 @@ const Signin = () => {
         .then((userCredential) => {
           // Signed in 
           const user = userCredential.user;
-          console.log(user)
+          // console.log(user)
           dispatch(setUserInfo(
            {
             _id:user.uid,
@@ -62,7 +62,7 @@ const Signin = () => {
            }
           ))
           // ...
-          console.log(user)
+          // console.log(user)
          
           setSuccessMsg("Logged in Successfully! Welcome back!")
           setTimeout(() => {
@@ -83,7 +83,7 @@ const Signin = () => {
             setUserParserErr("Wrong password! try again")
           }
       
-          console.log("Something is up,  Try correct Credential!");
+           console.log("Something is up,  Try correct Credential!");
         });
         
       
@@ -97,6 +97,7 @@ const Signin = () => {
       setPassword("")
     }
   };
+  
   return (
     <div className="w-full ">
       <div className="w-full bg-gray-100 pb-10">     

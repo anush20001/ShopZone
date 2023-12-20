@@ -229,6 +229,7 @@ import bannerImgeSix from "../../assests/banner/bannerImgeSix.jpg";
             <div>
               <img src={bannerImgeSix} alt="bannerImgeSix" />
             </div>
+          
           </Slider>
         </div>
       </div>

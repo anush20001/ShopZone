@@ -82,15 +82,16 @@ const Products = () => {
               </div>
 
               <div className=' text-sm  mt-4 '>
-                <p>   {item.description.substring(0, 100)}</p>
+                <p>   {item.description.substring(0, 80)}</p>
                 <div className=' text-yellow-400 mb-3 '>
                   <StarIcon />
                   <StarIcon  />
                   <StarIcon/>
                   <StarIcon/>
                   <StarIcon/>
-                </div>
+                  </div>
                 <p className="text-sm text-gray-600 font-semibold flex ml-4">₹{item.price}</p>
+                
               </div>
               <button onClick={() =>dispatch(addToCart({
                id: item.id,
@@ -99,7 +100,7 @@ const Products = () => {
                price: item.price,
                category: item.category,
                image: item.image,
-               quantity: 1,
+                quantity: 1,
               }))} className="w-full py-1.5 rounded-md mt-3 font-medium font-titleFont  text-base bg-gradient-to-tr from-red-500 to-red-600 border border-yellow-500 hover:border-yellow-700 hover:from-yellow-100 to hover:to-yellow-400  duration-400"
            
               >Add to Cart</button>

@@ -12,14 +12,16 @@ import { Link } from "react-router-dom";
 import { getAuth, signOut } from "firebase/auth";
 import { userSignOut } from "../../redux/amazonSlice";
 import ManageSearchIcon from '@mui/icons-material/ManageSearch';
-
+import { toast } from 'react-toastify';
 
 
 const Header = () => {
 
   const dispatch = useDispatch();
   const products = useSelector((state) => state.amazonReducer.products);
+ 
   const userInfo = useSelector((state) => state.amazonReducer.userInfo);
+  
   const auth = getAuth();
   const ref = useRef();
   const [showAll, setShowAll] = useState(false);
@@ -34,7 +36,7 @@ const Header = () => {
   
   const handleLogout = () => {
     signOut(auth).then(() => {
-     console.log("Sign-out successful")
+     toast("Sign-out successfully")
      dispatch(userSignOut())
     }).catch((error) => {
       console.error(error)
@@ -62,7 +64,7 @@ const Header = () => {
             onClick={() => setShowAll(!showAll)}
             className="w-14 h-full bg-gray-200   border-2 cursor-pointer duration-300 text-sm text-amazon_blue font-titleFont flex items-center justify-center rounded-tl-md rounded-bl-md"
           >
-            All{" "}
+            All
             <span>
               <ArrowDropDownOutlinedIcon />
             </span>
@@ -150,18 +152,7 @@ const Header = () => {
           </div>
         )}
         {/* ===================== Header Cart End here ============================ */}
-        {/* ============ Image Start here ================ */}
-        {/* ============ Image End here ================== */}
-        {/* ============ Deliver Start here ============== */}
-        {/* ============ Deliver End here ================ */}
-        {/* ============ Search Start here =============== */}
-        {/* ============ Search End here ================= */}
-        {/* ============ Signin Start here =============== */}
-        {/* ============ Signin End here ================= */}
-        {/* ============ Orders Start here =============== */}
-        {/* ============ Orders End here ================= */}
-        {/* ============ Cart Start here ================= */}
-        {/* ============ Cart End here =================== */}
+       
       </div>
       <HeaderBottom />
     </div>
